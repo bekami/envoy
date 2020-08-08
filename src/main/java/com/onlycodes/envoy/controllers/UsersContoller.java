@@ -25,7 +25,7 @@ public class UsersContoller {
     }
 
     @GetMapping("/users")
-    public  List<Users> getUsers() {
+    public List<Users> getUsers() {
         List<Users> users = repo.findAll();
         for (Users user: users) {
             user.display();

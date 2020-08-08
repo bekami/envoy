@@ -1,15 +1,8 @@
 package com.onlycodes.envoy.models;
 
 import org.springframework.data.annotation.Id;
-// import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.Data;
-// import lombok.Getter;
-// import lombok.Setter;
-// import lombok.ToString;
-
-@Data
 @Document(collection = "users")
 public class Users {
     @Id
@@ -33,9 +26,24 @@ public class Users {
         System.out.println("User " + _id +" "+  username + " " + email);
     }
 
-    // @Override
-    // public String toString() {
-    //     return "Users [_id="+_id +", username=" + username+ "]";
-    // }
+    @Override
+    public String toString() {
+        return "Users [_id="+_id +", username=" + username+", email=" + email+", password=" + password+ "]";
+    }
+
+    public String get_Id() {
+        return _id;
+    }
+    public String getUsername() {
+        return username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 
 }
